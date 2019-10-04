@@ -1173,17 +1173,17 @@ PrefabInstance:
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[3].buttonTextColor.r
-      value: 0.4528302
+      value: 0.745283
       objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[3].buttonTextColor.g
-      value: 0.4032393
+      value: 0.65359914
       objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[3].buttonTextColor.b
-      value: 0.15592737
+      value: 0.17225882
       objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
@@ -1409,8 +1409,29 @@ PrefabInstance:
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[3].studentName
-      value: Student Name
+      value: Jacob Wiles
       objectReference: {fileID: 0}
+    - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
+        type: 3}
+      propertyPath: levels.Array.data[3].splashScreenComments
+      value: Yeah, this is MY level. Look at it! Uh huh? Oh yeah!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
+        type: 3}
+      propertyPath: levels.Array.data[3].splashScreenPrefab
+      value: 
+      objectReference: {fileID: 1627403701986937775, guid: 5fe96595115ba9d42a6eb1a6a3c7b300,
+        type: 3}
+    - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
+        type: 3}
+      propertyPath: levels.Array.data[3].buttonSprite
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
+        type: 3}
+      propertyPath: levels.Array.data[3].splashScreenImage
+      value: 
+      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6421585309313591920, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: m_AnchoredPosition.x
