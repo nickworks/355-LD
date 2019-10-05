@@ -19,7 +19,7 @@ public class BallReseter : MonoBehaviour
     void OnCollisionEnter (Collision col)
     {
         var ob = col.gameObject;
-        print(ob);
+        //print(ob);
         var wallHit = ob.GetComponent<BallReseterWall>();
         if (wallHit == null)
         {

@@ -42,4 +42,8 @@ public class BallLauncher : MonoBehaviour
         inPlay = false;
         force = 0;
     }
+    public void Bounce(Vector3 dir, float power)
+    {
+        body.AddForce(dir * power, ForceMode.Impulse);
+    }
 }
