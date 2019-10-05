@@ -20,12 +20,12 @@ public class BallReseter : MonoBehaviour
     {
         var ob = col.gameObject;
         print(ob);
-        var ballHit = ob.GetComponent<BallReseterWall>();
-        if (ballHit == null)
+        var wallHit = ob.GetComponent<BallReseterWall>();
+        if (wallHit == null)
         {
             return;
         } else {
-            transform.SetPositionAndRotation(new Vector3(0.243f, 0.03f, -0.4f), new Quaternion());
+            if (wallHit.moveWhileReset) transform.SetPositionAndRotation(new Vector3(0.243f, 0.03f, -0.4f), new Quaternion());
             var bLauncher = GetComponent<BallLauncher>();
             bLauncher.Reset();
         }

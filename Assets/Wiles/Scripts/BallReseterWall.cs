@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallReseterWall : MonoBehaviour
 {
+    public bool moveWhileReset;
     // Start is called before the first frame update
     void Start()
     {
