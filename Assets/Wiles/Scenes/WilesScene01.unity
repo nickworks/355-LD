@@ -2744,6 +2744,7 @@ GameObject:
   - component: {fileID: 1758795890}
   - component: {fileID: 1758795891}
   - component: {fileID: 1758795892}
+  - component: {fileID: 1758795893}
   m_Layer: 0
   m_Name: Table Tilt Control
   m_TagString: Untagged
@@ -2820,6 +2821,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftArm: {fileID: 151089162}
   rightArm: {fileID: 1823853424}
+--- !u!114 &1758795893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758795889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa790a024347d2348b75b11a724e1c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTilt: 6.5
 --- !u!1 &1823853424
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,12 +23,12 @@ public class BallBounce : MonoBehaviour
         var wallHit = ob.GetComponent<BouncyObject>();
         if (wallHit == null)
         {
-            print("Not Bouncey)");
+            //print("Not Bouncey)");
             return;
         }
         else
         {
-            print("BOUNCE!?");
+            //print("BOUNCE!?");
 
             //Vector3 force = (col.transform.position - transform.position).normalized;
 
