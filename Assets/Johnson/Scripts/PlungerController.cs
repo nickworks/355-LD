@@ -7,8 +7,8 @@ public class PlungerController : MonoBehaviour
     Rigidbody body;
     Vector3 plungerDirection = new Vector3(0,100,0);
     int counter;
-    int counterMax = 15;
-    Quaternion rotation = Quaternion.Euler(90, 0, 0);
+    int counterMax = 50;
+    Quaternion rotation = Quaternion.Euler(-90, 0, 0);
 
     void Start()
     {
@@ -32,14 +32,24 @@ public class PlungerController : MonoBehaviour
         }
         if (Input.GetButtonUp("Plunger"))
         {
-            body.transform.rotation = rotation;
-            body.AddForce(Vector3.up * 10 * counter);
-            counter = 0;
-            Vector3 pos = body.transform.position;
-            pos.y = Mathf.Clamp(transform.position.y, 0, .2f);
-            body.transform.position = pos;
+            
+            
+            
+                if (transform.position.z <= -.4f)
+                {
+                Vector3 plungering = transform.TransformDirection(Vector3.forward * counter/2);
+                body.AddForce(plungering, ForceMode.Impulse);
+                counter = 0;
+                }
+                
+
+        }
+        if (body.transform.position.z >= -.45f)
+        {
+            body.transform.position = new Vector3(body.transform.position.x, body.transform.position.y, -.45f);
+            body.AddForce(Vector3.back, ForceMode.Impulse);
         }
 
-        
+
     }
 }
