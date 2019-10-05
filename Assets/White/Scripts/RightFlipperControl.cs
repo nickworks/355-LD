@@ -21,12 +21,11 @@ public class RightFlipperControl : MonoBehaviour
     }
 
     /*
-     * This function updates the right flipper to move when the right mouse button is pressed.
+     * This function updates the right flipper to move when the right mouse button or the right shift key is pressed.
      */
     void Update()
     {
         JointSpring spring = new JointSpring();
-        joint.useSpring = false;
 
         if (Input.GetButton("FlipperRight"))
         {
@@ -40,6 +39,9 @@ public class RightFlipperControl : MonoBehaviour
        if(Input.GetButtonUp("FlipperRight"))
         {
             spring.targetPosition = 0;
+            spring.spring = flipperStrength;
+
+            joint.spring = spring;
         }
     }
 }

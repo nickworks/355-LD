@@ -21,7 +21,7 @@ public class LeftFlipperControl : MonoBehaviour
     }
 
     /*
-     * This function updates the left flipper to move when the left mouse button is pressed.
+     * This function updates the left flipper to move when the left mouse button or the left shift key is pressed.
      */
     void Update()
     {
@@ -29,10 +29,7 @@ public class LeftFlipperControl : MonoBehaviour
 
         if (Input.GetButton("FlipperLeft"))
         {
-            flipperStrength = +200 * Time.deltaTime;
-            flipperStrength = Mathf.Clamp(flipperStrength, 0, 1000);
-
-            spring.targetPosition = -90;
+            spring.targetPosition = -75;
             spring.spring = flipperStrength;
 
             joint.spring = spring;
@@ -41,9 +38,10 @@ public class LeftFlipperControl : MonoBehaviour
 
         if (Input.GetButtonUp("FlipperLeft"))
         {
-            joint.useSpring = false;
-            flipperStrength = 0;
-            spring.targetPosition = 90;
+            spring.targetPosition = 0;
+            spring.spring = flipperStrength;
+
+            joint.spring = spring;
         }
     }
 }
