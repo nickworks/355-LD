@@ -19,7 +19,7 @@ public class PlungerControls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         switch(currentState){
