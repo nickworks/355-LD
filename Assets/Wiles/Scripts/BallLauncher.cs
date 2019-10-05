@@ -21,8 +21,7 @@ public class BallLauncher : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            inPlay = false;
-            force = 0;
+            Reset();
         }
         if (!inPlay)
         {
@@ -37,5 +36,10 @@ public class BallLauncher : MonoBehaviour
                 inPlay = true;
             }
         }
+    }
+    public void Reset()
+    {
+        inPlay = false;
+        force = 0;
     }
 }
