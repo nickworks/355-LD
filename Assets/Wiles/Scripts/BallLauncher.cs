@@ -19,6 +19,11 @@ public class BallLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            inPlay = false;
+            force = 0;
+        }
         if (!inPlay)
         {
             if (Input.GetButton("Plunger"))
