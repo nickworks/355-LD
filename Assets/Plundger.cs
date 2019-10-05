@@ -2,33 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plundger : MonoBehaviour
+public class Plunger : MonoBehaviour
 {
     // Start is called before the first frame update
+    Rigidbody pinballRigidbody;
+    private float force = 0;
+    public float forcePerSecond = 100f;
+    public float forceMaximum = 1000f;
 
+    
     void Update()
     {
-if (Input.GetButtonUp("Plunger"))
-            {
-print("help");
-            Vector3 force = new Vector3(100, 0, 0);
-    }
-    }
-        void OnCollisionStay(Collision collision)
-    {
-        
-            ContactPoint[] points = new ContactPoint[collision.contactCount];
-            collision.GetContacts(points);
-            Vector3 force = new Vector3(0, 0, 0);
-            foreach (ContactPoint cp in points)
-            {
-                force += cp.normal;
-            }
-            force /= -points.Length;
+        if (pinballRigidbody != null && Input.GetButton("Plunger"))
+        {
+            force += forcePerSecond * Time.deltaTime;
+            force = Mathf.Clamp(force, 0, forceMaximum);
 
-            //Vector3 force = (collision.transform.position - transform.position).normalized;
-            collision.rigidbody.AddForce(force, ForceMode.Force);
-            
-       
+        }
+        if (pinballRigidbody != null && Input.GetButtonUp("Plunger"))
+        {
+            pinballRigidbody.AddForce(transform.forward * force, ForceMode.Impulse);
+            print($"shoot ball with force amount: {force}");
+        }
+    }
+    void OnTriggerEnter(Collider collider)
+    {
+           
+        if (pinballRigidbody == null && collider.transform.tag == "Pinball")
+        {
+            print("hit");
+            pinballRigidbody = collider.GetComponent<Rigidbody>();
+        }
+
+    }
+    void OnTriggerExit(Collider collider)
+    {
+        if(collider.GetComponent<Rigidbody>() == pinballRigidbody)
+        {
+            pinballRigidbody = null;
+        }
     }
 }
