@@ -17,6 +17,6 @@ public class BumperProperties : MonoBehaviour
         force /= -points.Length;
 
         //Vector3 force = (collision.transform.position - transform.position).normalized;
-        collision.rigidbody.AddForce(force * .9f, ForceMode.Impulse);
+        collision.rigidbody.AddForce(force * .7f, ForceMode.Impulse);
     }
 }
