@@ -6,9 +6,9 @@ public class PlungerImpulse : MonoBehaviour
 {
 
     float counter;
-    float counterMax = 3.2f;
+    float counterMax = 5.0f;
     public Rigidbody body;
-    
+    bool isTouching = false;
 
 
 
@@ -28,14 +28,26 @@ public class PlungerImpulse : MonoBehaviour
             }
             else
             {
-                counter += .02f;
+                counter += .04f;
             }
             
         }
         else if (Input.GetButtonUp("Plunger"))
         {
-            body.AddForce(Vector3.forward * counter, ForceMode.Impulse);
+            if (isTouching)
+            {
+                body.AddForce(Vector3.forward * counter, ForceMode.Impulse);
+            }
         }
         
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isTouching = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        isTouching = false;
     }
 }

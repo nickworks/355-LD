@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallProperties : MonoBehaviour
+public class BumperProperties : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,6 +17,6 @@ public class WallProperties : MonoBehaviour
         force /= -points.Length;
 
         //Vector3 force = (collision.transform.position - transform.position).normalized;
-        collision.rigidbody.AddForce(force, ForceMode.Impulse);
+        collision.rigidbody.AddForce(force * .9f, ForceMode.Impulse);
     }
 }
