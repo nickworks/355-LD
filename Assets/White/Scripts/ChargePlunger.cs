@@ -8,8 +8,10 @@ using UnityEngine;
 public class ChargePlunger : MonoBehaviour
 {
     Rigidbody body;
+    SpringJoint joint;
+
     public float plungerStrength = 0;
-    private Vector3 plungerWindup;
+    private Vector3 plungerStart;
 
     /*
      * This function gets the Rigidbody and stores it into its variable.
@@ -17,6 +19,8 @@ public class ChargePlunger : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody>();
+        joint = GetComponent<SpringJoint>();
+        plungerStart = body.position;
     }
 
     /*
@@ -26,15 +30,15 @@ public class ChargePlunger : MonoBehaviour
     {
         if(Input.GetButton("Plunger"))
         {
+            body.MovePosition(body.position + Vector3.back * Time.deltaTime); // move the plunger's position back while the space bar is pressed down
+
             plungerStrength += 100 * Time.deltaTime;
             plungerStrength = Mathf.Clamp(plungerStrength, 0, 1000);
-
-            body.transform.position = plungerWindup;
         }
 
         if(Input.GetButtonUp("Plunger"))
         {
-
+            plungerStrength = 0;
         }
     }
 }
