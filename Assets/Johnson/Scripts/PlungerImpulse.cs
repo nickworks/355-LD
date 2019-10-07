@@ -41,13 +41,14 @@ public class PlungerImpulse : MonoBehaviour
         }
         
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         isTouching = true;
     }
-    private void OnCollisionExit(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
         isTouching = false;
     }
 }
+
