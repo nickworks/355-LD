@@ -2361,7 +2361,6 @@ GameObject:
   - component: {fileID: 1063399957}
   - component: {fileID: 1063399961}
   - component: {fileID: 1063399960}
-  - component: {fileID: 1063399959}
   - component: {fileID: 1063399958}
   m_Layer: 0
   m_Name: RightFlipper
@@ -2392,22 +2391,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1063399956}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83a81e0ec1e73a443b73601957ade432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capultSrentgh: 300
---- !u!114 &1063399959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063399956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ea8a2325af1e34ea4bc71e8e5e27b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 879e8cc10e60082448d04f1accc0d8ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   capultSrentgh: 300
@@ -3310,7 +3296,6 @@ GameObject:
   - component: {fileID: 1332667414}
   - component: {fileID: 1332667413}
   - component: {fileID: 1332667412}
-  - component: {fileID: 1332667416}
   m_Layer: 0
   m_Name: LeftFillper
   m_TagString: Untagged
@@ -3325,9 +3310,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332667411}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ea8a2325af1e34ea4bc71e8e5e27b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 123bab1c7911f66468e083218a8c417b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   capultSrentgh: 300
@@ -3397,19 +3382,6 @@ Transform:
   m_Father: {fileID: 92574945}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1332667416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332667411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83a81e0ec1e73a443b73601957ade432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  capultSrentgh: 300
 --- !u!1001 &1349157074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5570,7 +5542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a81e0ec1e73a443b73601957ade432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capultSrentgh: 300
 --- !u!114 &1923917196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5583,7 +5554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ea8a2325af1e34ea4bc71e8e5e27b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capultSrentgh: 300
 --- !u!59 &1923917197
 HingeJoint:
   m_ObjectHideFlags: 0
