@@ -20,22 +20,22 @@ public class FlipperRight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
         if (Input.GetButtonDown("FlipperRight"))
         {
             JointSpring spring = new JointSpring();
-            spring.targetPosition = -65;
+            spring.targetPosition = 65;
             spring.spring = capultSrentgh;
             joint.spring = spring;
             joint.useSpring = true;
-
+           
 
 
         }
         if (Input.GetButtonUp("FlipperRight"))
         {
             JointSpring spring = new JointSpring();
-            spring.targetPosition = 15;
+            spring.targetPosition = -20;
             spring.spring = capultSrentgh;
             joint.spring = spring;
             joint.useSpring = true;

@@ -2,41 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plundger : MonoBehaviour
+public class Plunger : MonoBehaviour
 {
     // Start is called before the first frame update
-    Rigidbody body;
-    void Start()
-    {
+    Rigidbody pinballRigidbody;
+    private float force = 0;
+    public float forcePerSecond = 100f;
+    public float forceMaximum = 1000f;
 
-        body = GetComponent<Rigidbody>();
-    }
-    bool plunger = false;
-    public int force = 0;
+
     void Update()
     {
-        if (plunger = true && Input.GetButton("Plunger"))
+        if (pinballRigidbody != null && Input.GetButton("Plunger"))
         {
-            force += 1;
-            
+            force += forcePerSecond * Time.deltaTime;
+            force = Mathf.Clamp(force, 0, forceMaximum);
+
         }
-        if (plunger = true && Input.GetButtonUp("Plunger"))
+        if (pinballRigidbody != null && Input.GetButtonUp("Plunger"))
         {
-            body.AddForce(transform.up * force);
-           
+            pinballRigidbody.AddForce(transform.forward * force, ForceMode.Impulse);
+            print($"shoot ball with force amount: {force}");
+            force = 0;
         }
     }
     void OnTriggerEnter(Collider collider)
     {
-           
-        if (collider.transform.tag == "Pinball)")
+
+        if (pinballRigidbody == null && collider.transform.tag == "Pinball")
         {
-            print("help");
-            plunger = true;
+            print("hit");
+            pinballRigidbody = collider.GetComponent<Rigidbody>();
         }
 
-
-
-
+    }
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.GetComponent<Rigidbody>() == pinballRigidbody)
+        {
+            pinballRigidbody = null;
+        }
     }
 }
