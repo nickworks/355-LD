@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TiltControls : MonoBehaviour
+public class TiltControlsWiles : MonoBehaviour
 {
     public float maxTilt = 6.5f;
     public float minTilt = -6.5f;

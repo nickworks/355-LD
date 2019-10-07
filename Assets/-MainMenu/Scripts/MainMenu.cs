@@ -48,7 +48,7 @@ public class MainMenu : MonoBehaviour {
         if (bttns.Count > 0) {
             MainMenuButton lastBttn = bttns[bttns.Count - 1];
 
-            int cols = 2;
+            int cols = 1;
             int col = bttns.Count % cols;
             int row = bttns.Count / cols;
 
