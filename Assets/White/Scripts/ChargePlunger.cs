@@ -26,19 +26,20 @@ public class ChargePlunger : MonoBehaviour
     /*
      * This function updates the plunger.
      */
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetButton("Plunger"))
         {
             body.MovePosition(body.position + Vector3.back * Time.deltaTime); // move the plunger's position back while the space bar is pressed down
 
-            plungerStrength += 100 * Time.deltaTime;
-            plungerStrength = Mathf.Clamp(plungerStrength, 0, 1000);
+            plungerStrength += 10 * Time.deltaTime;
+            plungerStrength = Mathf.Clamp(plungerStrength, 0, 10);
         }
 
         if(Input.GetButtonUp("Plunger"))
         {
             plungerStrength = 0;
+            //body.position = plungerStart;
         }
     }
 }
