@@ -169,7 +169,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6644e0c4fa62dc1419a07eb1bbe59c9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -967,7 +967,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6644e0c4fa62dc1419a07eb1bbe59c9d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1459,22 +1459,22 @@ PrefabInstance:
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[0].levelName
-      value: Table 1
+      value: Keegan's Table
       objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[1].levelName
-      value: Table 2
+      value: Jesse's Table
       objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[2].levelName
-      value: Table 3
+      value: Lauren's Table
       objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[3].levelName
-      value: Table 4
+      value: Jacob's Table
       objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
@@ -1670,13 +1670,12 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[0].splashScreenPrefab
       value: 
-      objectReference: {fileID: 1627403701986937775, guid: 5fe96595115ba9d42a6eb1a6a3c7b300,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[0].buttonSprite
       value: 
-      objectReference: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[0].levelFilename
@@ -1726,13 +1725,12 @@ PrefabInstance:
         type: 3}
       propertyPath: levels.Array.data[3].splashScreenPrefab
       value: 
-      objectReference: {fileID: 1627403701986937775, guid: 5fe96595115ba9d42a6eb1a6a3c7b300,
-        type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[3].buttonSprite
       value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 0}
     - target: {fileID: 6223450075706780608, guid: 74f6f874feb53f94fa052fd8491334e3,
         type: 3}
       propertyPath: levels.Array.data[3].splashScreenImage
