@@ -17,7 +17,7 @@ public class TiltControls : MonoBehaviour
         // tilt left
         if (Input.GetKeyDown("a") || Input.GetKeyDown("left"))
         {
-            table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, 5);
+            table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, 1.5f);
         }
         if (Input.GetKeyUp("a") || Input.GetKeyUp("left"))
         {
@@ -27,7 +27,7 @@ public class TiltControls : MonoBehaviour
         // tilt right
         if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
         {
-            table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, -5);
+            table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, -1.5f);
         }
         if (Input.GetKeyUp("d") || Input.GetKeyUp("right"))
         {  
