@@ -19,15 +19,15 @@ public class TiltControlsWiles : MonoBehaviour
         Quaternion maxQuart = Quaternion.Euler(-6.5f, 0, maxTilt);
         Quaternion minQuart = Quaternion.Euler(-6.5f, 0, minTilt);
         Quaternion defQuart = Quaternion.Euler(-6.5f, 0, 0);
-        if (Input.GetAxisRaw("Horizontal") == -1) transform.localRotation = maxQuart;
-        if (Input.GetAxisRaw("Horizontal") == 1) transform.localRotation = minQuart;
-        if (Input.GetAxisRaw("Horizontal") == 0) transform.rotation = defQuart;
+        if (Input.GetAxisRaw("Tilt") == -1) transform.localRotation = maxQuart;
+        if (Input.GetAxisRaw("Tilt") == 1) transform.localRotation = minQuart;
+        if (Input.GetAxisRaw("Tilt") == 0) transform.rotation = defQuart;
         //print("Horizontal is down!");
         /*
         float tilt = -(Input.GetAxisRaw("Horizontal"));
         Transform tiltTrans = transform;
         tiltTrans.eulerAngles = Vector3.Lerp(tiltTrans.eulerAngles, new Vector3(tiltTrans.eulerAngles.x, tiltTrans.eulerAngles.y, maxTilt * tilt), .65f);
-    print(tiltTrans.eulerAngles);
+        print(tiltTrans.eulerAngles);
         transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, tiltTrans.eulerAngles, .65f);
         */
 

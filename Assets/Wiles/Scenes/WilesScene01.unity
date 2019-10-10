@@ -3087,10 +3087,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1758795889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa790a024347d2348b75b11a724e1c31, type: 3}
+  m_Script: {fileID: 11500000, guid: f1ece4c6649fffa479d1a29173944d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  table: {fileID: 0}
+  maxTilt: 6.5
+  minTilt: -6.5
 --- !u!1 &1823853424
 GameObject:
   m_ObjectHideFlags: 0
