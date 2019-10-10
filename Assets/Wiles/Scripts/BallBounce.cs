@@ -2,49 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallBounce : MonoBehaviour
+namespace Wiles
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BallBounce : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void OnCollisionEnter(Collision col)
-    {
-        var ob = col.gameObject;
-        
-        print(ob);
-        var wallHit = ob.GetComponent<BouncyObject>();
-        if (wallHit == null)
+        // Start is called before the first frame update
+        void Start()
         {
-            //print("Not Bouncey)");
-            return;
+
         }
-        else
+
+        // Update is called once per frame
+        void Update()
         {
-            //print("BOUNCE!?");
 
-            //Vector3 force = (col.transform.position - transform.position).normalized;
+        }
+        void OnCollisionEnter(Collision col)
+        {
+            var ob = col.gameObject;
 
-            
-            ContactPoint[] points = new ContactPoint[col.contactCount];
-            col.GetContacts(points);
-
-            Vector3 force = new Vector3();
-            foreach (ContactPoint cp in points)
+            print(ob);
+            var wallHit = ob.GetComponent<BouncyObject>();
+            if (wallHit == null)
             {
-                force += cp.normal;
+                //print("Not Bouncey)");
+                return;
             }
-            force /= -points.Length;
-            
-            var bLauncher = GetComponent<BallLauncher>();
-            bLauncher.Bounce(force, wallHit.bouncyAmmount);
+            else
+            {
+                //print("BOUNCE!?");
+
+                //Vector3 force = (col.transform.position - transform.position).normalized;
+
+
+                ContactPoint[] points = new ContactPoint[col.contactCount];
+                col.GetContacts(points);
+
+                Vector3 force = new Vector3();
+                foreach (ContactPoint cp in points)
+                {
+                    force += cp.normal;
+                }
+                force /= -points.Length;
+
+                var bLauncher = GetComponent<BallLauncher>();
+                bLauncher.Bounce(force, wallHit.bouncyAmmount);
+            }
         }
     }
 }

@@ -3,30 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlungerBar : MonoBehaviour
+namespace Wiles
 {
-
-    public Image progressBar;
-    public Text progressText;
-
-    float power;
-    float powerMax;
-
-    public GameObject pinballReference;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PlungerBar : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        power = pinballReference.GetComponent<BallLauncher>().force;
-        powerMax = pinballReference.GetComponent<BallLauncher>().maxForce;
+        public Image progressBar;
+        public Text progressText;
 
-        progressBar.fillAmount = power / powerMax;
-        progressText.text = $"{progressBar.fillAmount * 100}%";
+        float power;
+        float powerMax;
+
+        public GameObject pinballReference;
+
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            power = pinballReference.GetComponent<BallLauncher>().force;
+            powerMax = pinballReference.GetComponent<BallLauncher>().maxForce;
+
+            progressBar.fillAmount = power / powerMax;
+            progressText.text = $"{progressBar.fillAmount * 100}%";
+        }
     }
 }
