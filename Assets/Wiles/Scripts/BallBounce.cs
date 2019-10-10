@@ -6,10 +6,13 @@ namespace Wiles
 {
     public class BallBounce : MonoBehaviour
     {
+
+        public Wiles.GameValues gameScore;
+
         // Start is called before the first frame update
         void Start()
         {
-
+            gameScore = GetComponent<GameValues>();
         }
 
         // Update is called once per frame
@@ -19,6 +22,9 @@ namespace Wiles
         }
         void OnCollisionEnter(Collision col)
         {
+
+            gameScore.score++;
+
             var ob = col.gameObject;
 
             print(ob);
@@ -34,6 +40,7 @@ namespace Wiles
 
                 //Vector3 force = (col.transform.position - transform.position).normalized;
 
+                gameScore.multiplyer++;
 
                 ContactPoint[] points = new ContactPoint[col.contactCount];
                 col.GetContacts(points);
