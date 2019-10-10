@@ -2,44 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * This class allows the player to charge up the plunger in order to launch the ball into play.
- */
-public class ChargePlunger : MonoBehaviour
+namespace White
 {
-    Rigidbody body;
-    SpringJoint joint;
-
-    public float plungerStrength = 0;
-    private Vector3 plungerStart;
-
     /*
-     * This function gets the Rigidbody and stores it into its variable.
+     * This class allows the player to charge up the plunger in order to launch the ball into play.
      */
-    void Start()
+    public class ChargePlunger : MonoBehaviour
     {
-        body = GetComponent<Rigidbody>();
-        joint = GetComponent<SpringJoint>();
-        plungerStart = body.position;
-    }
+        Rigidbody body;
+        SpringJoint joint;
 
-    /*
-     * This function updates the plunger.
-     */
-    void FixedUpdate()
-    {
-        if(Input.GetButton("Plunger"))
+        public float plungerStrength = 0;
+        private Vector3 plungerStart;
+
+        /*
+         * This function gets the Rigidbody and stores it into its variable.
+         */
+        void Start()
         {
-            body.MovePosition(body.position + Vector3.back * Time.deltaTime); // move the plunger's position back while the space bar is pressed down
-
-            plungerStrength += 10 * Time.deltaTime;
-            plungerStrength = Mathf.Clamp(plungerStrength, 0, 10);
+            body = GetComponent<Rigidbody>();
+            joint = GetComponent<SpringJoint>();
+            plungerStart = body.position;
         }
 
-        if(Input.GetButtonUp("Plunger"))
+        /*
+         * This function updates the plunger.
+         */
+        void FixedUpdate()
         {
-            plungerStrength = 0;
-            //body.position = plungerStart;
+            if (Input.GetButton("Plunger"))
+            {
+                body.MovePosition(body.position + Vector3.back * Time.deltaTime); // move the plunger's position back while the space bar is pressed down
+
+                plungerStrength += 10 * Time.deltaTime;
+                plungerStrength = Mathf.Clamp(plungerStrength, 0, 10);
+            }
+
+            if (Input.GetButtonUp("Plunger"))
+            {
+                plungerStrength = 0;
+                //body.position = plungerStart;
+            }
         }
     }
 }

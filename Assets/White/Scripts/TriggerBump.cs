@@ -2,23 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerBump : MonoBehaviour
+namespace White
 {
-    public int bumperForce = 800;
-    public GameObject player;
-
-    // Start is called before the first frame update
-    void Start()
+    public class TriggerBump : MonoBehaviour
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
+        public int bumperForce = 800;
+        public GameObject player;
 
-    // Update is called once per frame
-    public void OnTriggerEnter(Collider collider)
-    {
-        if(collider.gameObject == player)
+        // Start is called before the first frame update
+        void Start()
         {
-            player.GetComponent<Rigidbody>().AddExplosionForce(bumperForce, transform.position, 1);
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+
+        // Update is called once per frame
+        public void OnTriggerEnter(Collider collider)
+        {
+            if (collider.gameObject == player)
+            {
+                player.GetComponent<Rigidbody>().AddExplosionForce(bumperForce, transform.position, 1);
+            }
         }
     }
 }
