@@ -10,16 +10,16 @@ public class HUDControler : MonoBehaviour
     float xp = 0;
     float xpMax = 350;
    public Text textScore;
-    static int score = 0;
+    public static int score;
     void Start()
     {
-        
+        score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        textScore.text = $"XP:{(int)score}";
+        textScore.text = $"SCORE:{(int)score}";
         if (Input.GetButton("Plunger"))
         {
             xp += 200 * Time.deltaTime;
