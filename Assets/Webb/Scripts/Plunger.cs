@@ -22,7 +22,7 @@ public class Plunger : MonoBehaviour
         if (pinballRigidbody != null && Input.GetButtonUp("Plunger"))
         {
             pinballRigidbody.AddForce(transform.forward * force, ForceMode.Impulse);
-            print($"shoot ball with force amount: {force}");
+           // print($"shoot ball with force amount: {force}");
             force = 0;
         }
     }
@@ -31,7 +31,7 @@ public class Plunger : MonoBehaviour
 
         if (pinballRigidbody == null && collider.transform.tag == "Pinball")
         {
-            print("hit");
+           // print("hit");
             pinballRigidbody = collider.GetComponent<Rigidbody>();
         }
 
