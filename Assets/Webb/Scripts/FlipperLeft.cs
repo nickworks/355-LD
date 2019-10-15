@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace webb { };
 public class FlipperLeft : MonoBehaviour
 {
     Rigidbody body;
     HingeJoint joint;
     public float capultSrentgh = 300;
 
-    public
+
 
     // Start is called before the first frame update
     void Start()

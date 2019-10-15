@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace webb { };
 public class Bounce : MonoBehaviour
 {
     public float forcemultiplier = .002f;
