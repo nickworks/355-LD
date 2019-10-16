@@ -26,6 +26,11 @@ namespace webb
         // Update is called once per frame
         void Update()
         {
+            HUD();
+        }
+
+        private void HUD()
+        {
             textScore.text = $"SCORE:{(int)score}";
             textLives.text = $"Lives:{(int)lives}";
             textMultiplier.text = $"X{(int)multiplier}";
@@ -42,6 +47,7 @@ namespace webb
                 ClearXpValue();
             }
         }
+
         public void ClearXpValue()
         {
             xp = 0;

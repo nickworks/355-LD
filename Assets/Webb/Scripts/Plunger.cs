@@ -14,6 +14,11 @@ namespace webb
 
         void Update()
         {
+            Shoot();
+        }
+
+        private void Shoot()
+        {
             if (pinballRigidbody != null && Input.GetButton("Plunger"))
             {
                 force += forcePerSecond * Time.deltaTime;
@@ -27,6 +32,7 @@ namespace webb
                 force = 0;
             }
         }
+
         void OnTriggerEnter(Collider collider)
         {
 

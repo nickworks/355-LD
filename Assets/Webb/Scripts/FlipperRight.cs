@@ -21,7 +21,11 @@ namespace webb
         // Update is called once per frame
         void Update()
         {
+            Flipper();
+        }
 
+        private void Flipper()
+        {
             if (Input.GetButtonDown("FlipperRight"))
             {
                 JointSpring spring = new JointSpring();
@@ -45,6 +49,5 @@ namespace webb
 
             }
         }
-
     }
 }
