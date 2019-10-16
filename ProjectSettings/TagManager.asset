@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plunger
   - Pinball
+  - Return
   layers:
   - Default
   - TransparentFX
