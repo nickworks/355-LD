@@ -1,24 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace webb { };
-public class Bounce : MonoBehaviour
-{ 
-    public float forcemultiplier = .002f;
-    void OnCollisionEnter(Collision collision)
+namespace webb
+{
+    public class Bounce : MonoBehaviour
     {
-        HUDControler.score += 50 * HUDControler.multiplier;
-        ContactPoint[] points = new ContactPoint[collision.contactCount];
-        collision.GetContacts(points);
-        Vector3 force = new Vector3();
-        foreach (ContactPoint cp in points)
+        public float forcemultiplier = .002f;
+        void OnCollisionEnter(Collision collision)
         {
-            force += cp.normal;
+            HUDControler.score += 50 * HUDControler.multiplier;
+            ContactPoint[] points = new ContactPoint[collision.contactCount];
+            collision.GetContacts(points);
+            Vector3 force = new Vector3();
+            foreach (ContactPoint cp in points)
+            {
+                force += cp.normal;
+            }
+            force /= -points.Length;
+
+            //Vector3 force = (collision.transform.position - transform.position).normalized;
+            collision.rigidbody.AddForce(force * forcemultiplier, ForceMode.Impulse);
+
         }
-        force /= -points.Length;
-
-        //Vector3 force = (collision.transform.position - transform.position).normalized;
-        collision.rigidbody.AddForce(force * forcemultiplier, ForceMode.Impulse);
-
     }
 }
