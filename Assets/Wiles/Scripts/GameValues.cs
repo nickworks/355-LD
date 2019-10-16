@@ -12,10 +12,13 @@ namespace Wiles
         public int multiplyer = 1;
         public int ballsLeft = 2;
 
+        public GameObject pinBall;
+        BallReseter resetHelp;
+
         // Start is called before the first frame update
         void Start()
         {
-
+            resetHelp = pinBall.GetComponent<BallReseter>();
         }
 
         // Update is called once per frame
@@ -24,7 +27,8 @@ namespace Wiles
             if (gameOver)
             {
                 //TODO: Run GameOver Script
-                print("GAMEOVER!");
+                //print("GAMEOVER!");
+                if (Input.GetKeyUp("g")) resetGame();
             }
         }
 
@@ -36,6 +40,18 @@ namespace Wiles
         public void multUp(int multGain)
         {
             multiplyer += multGain;
+        }
+
+        public void resetGame()
+        {
+            gameOver = false;
+            score = 0;
+            multiplyer = 1;
+            ballsLeft = 2;
+
+            resetHelp.resetBallPosition();
+            resetHelp.resetBallLauncher();
+            
         }
     }
 }

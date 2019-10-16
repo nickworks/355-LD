@@ -41,11 +41,21 @@ namespace Wiles
                     }
                     else gameScore.ballsLeft--;
 
-                    transform.SetPositionAndRotation(new Vector3(0.243f, 0.03f, -0.4f), new Quaternion());
+                    resetBallPosition();
                 }
-                var bLauncher = GetComponent<BallLauncher>();
-                bLauncher.Reset();
+                resetBallLauncher();
             }
+        }
+
+        public void resetBallPosition()
+        {
+            transform.SetPositionAndRotation(new Vector3(0.243f, 0.03f, -0.4f), new Quaternion());
+        }
+
+        public void resetBallLauncher()
+        {
+            var bLauncher = GetComponent<BallLauncher>();
+            bLauncher.Reset();
         }
     }
 }

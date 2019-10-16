@@ -42,7 +42,7 @@ namespace Wiles
             if (leftFlipper > 0)
             { // Left is pushed...
               // Activete Left Arms...
-                print("LEFT!");
+                //print("LEFT!");
                 targetSpringLeft.targetPosition = -90;
             }
 
@@ -50,7 +50,7 @@ namespace Wiles
             if (rightFlipper > 0)
             { // Right is pushed...
               // Activate Right Arms...
-                print("RIGHT!");
+                //print("RIGHT!");
                 targetSpringRight.targetPosition = 90;
             }
 

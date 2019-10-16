@@ -29,7 +29,7 @@ namespace Wiles
 
             var ob = col.gameObject;
 
-            print(ob);
+            //print(ob);
             var wallHit = ob.GetComponent<BouncyObject>();
             if (wallHit == null)
             {
