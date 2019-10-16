@@ -34,8 +34,8 @@ namespace White
             {
                 body.MovePosition(body.position + Vector3.back * Time.deltaTime); // move the plunger's position back while the space bar is pressed down
 
-                plungerStrength += 100 * Time.deltaTime;
-                plungerStrength = Mathf.Clamp(plungerStrength, 0, 10);
+                plungerStrength += 1000 * Time.deltaTime;
+                plungerStrength = Mathf.Clamp(plungerStrength, 0, 10000);
             }
 
             if (Input.GetButtonUp("Plunger"))
