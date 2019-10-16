@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BumperProperties : MonoBehaviour
+namespace Johnson
 {
-    private void OnCollisionEnter(Collision collision)
+    public class BumperProperties : MonoBehaviour
     {
-        ContactPoint[] points = new ContactPoint[collision.contactCount];
-        collision.GetContacts(points);
-
-        Vector3 force = new Vector3();
-        foreach (ContactPoint cp in points)
+        private void OnCollisionEnter(Collision collision)
         {
-            force += cp.normal;
-        }
-        force /= -points.Length;
+            ContactPoint[] points = new ContactPoint[collision.contactCount];
+            collision.GetContacts(points);
 
-        //Vector3 force = (collision.transform.position - transform.position).normalized;
-        collision.rigidbody.AddForce(force *  1, ForceMode.Impulse);
+            Vector3 force = new Vector3();
+            foreach (ContactPoint cp in points)
+            {
+                force += cp.normal;
+            }
+            force /= -points.Length;
+
+            //Vector3 force = (collision.transform.position - transform.position).normalized;
+            collision.rigidbody.AddForce(force * 1, ForceMode.Impulse);
+        }
     }
 }

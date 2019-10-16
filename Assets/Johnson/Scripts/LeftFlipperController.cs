@@ -2,30 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftFlipperController : MonoBehaviour
+namespace Johnson
 {
-
-    HingeJoint leftHinge;
-
-    void Start()
+    public class LeftFlipperController : MonoBehaviour
     {
 
-        leftHinge = GetComponent<HingeJoint>();
+        HingeJoint leftHinge;
 
-    }
-
-    
-    void FixedUpdate()
-    {
-
-        if (Input.GetButton("FlipperLeft"))
+        void Start()
         {
-            leftHinge.useMotor = true;
-        }
-        else
-        {
-            leftHinge.useMotor = false;
+
+            leftHinge = GetComponent<HingeJoint>();
+
         }
 
+
+        void FixedUpdate()
+        {
+
+            if (Input.GetButton("FlipperLeft"))
+            {
+                leftHinge.useMotor = true;
+            }
+            else
+            {
+                leftHinge.useMotor = false;
+            }
+
+        }
     }
 }

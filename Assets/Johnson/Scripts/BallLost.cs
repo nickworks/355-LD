@@ -3,29 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class BallLost : MonoBehaviour
+namespace Johnson
 {
-    bool isBallGone = false;
-    Scene scene;
-
-    private void OnTriggerEnter(Collider other)
+    public class BallLost : MonoBehaviour
     {
-        
-        isBallGone = true;
-    }
+        bool isBallGone = false;
+        Scene scene;
 
-    private void Update()
-    {
-        if (isBallGone)
+
+        private void OnTriggerEnter(Collider other)
         {
-            if (Input.GetButtonDown("Reset"))
-            {
-                isBallGone = false;
-                SceneManager.LoadScene(1, LoadSceneMode.Single);
 
-            }
+            isBallGone = true;
         }
-        
+
+        private void Update()
+        {
+            if (isBallGone)
+            {
+                if (Input.GetButtonDown("Reset"))
+                {
+                    isBallGone = false;
+
+
+                }
+            }
+
+        }
     }
 }
