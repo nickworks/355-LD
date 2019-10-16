@@ -24,7 +24,18 @@ namespace Wiles
             if (gameOver)
             {
                 //TODO: Run GameOver Script
+                print("GAMEOVER!");
             }
+        }
+
+        public void scoreUp(int pointsGain)
+        {
+            score += pointsGain * multiplyer;
+        }
+
+        public void multUp(int multGain)
+        {
+            multiplyer += multGain;
         }
     }
 }

@@ -7,18 +7,19 @@ namespace Wiles
     public class BallReseter : MonoBehaviour
     {
 
-        public Wiles.GameValues gameScore;
+        public GameObject game;
+        GameValues gameScore;
 
         // Start is called before the first frame update
         void Start()
         {
-            gameScore = GetComponent<GameValues>();
+            gameScore = game.GetComponent<GameValues>();
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            if (gameScore == null) gameScore = game.GetComponent<GameValues>();
         }
         void OnCollisionEnter(Collision col)
         {
@@ -31,14 +32,17 @@ namespace Wiles
             }
             else
             {
-                if (gameScore.ballsLeft >= 0) gameScore.ballsLeft--;
-                else
+                if (wallHit.moveWhileReset)
                 {
-                    gameScore.gameOver = true;
-                    return;
-                }
+                    if (gameScore.ballsLeft <= 0)
+                    {
+                        gameScore.gameOver = true;
+                        return;
+                    }
+                    else gameScore.ballsLeft--;
 
-                if (wallHit.moveWhileReset) transform.SetPositionAndRotation(new Vector3(0.243f, 0.03f, -0.4f), new Quaternion());
+                    transform.SetPositionAndRotation(new Vector3(0.243f, 0.03f, -0.4f), new Quaternion());
+                }
                 var bLauncher = GetComponent<BallLauncher>();
                 bLauncher.Reset();
             }

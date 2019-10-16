@@ -1,29 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Wiles;
 
 namespace Wiles
 {
     public class BallBounce : MonoBehaviour
     {
 
-        public Wiles.GameValues gameScore;
+        public GameObject game;
+        GameValues gameScore;
 
         // Start is called before the first frame update
         void Start()
         {
-            gameScore = GetComponent<GameValues>();
+            gameScore = game.GetComponent<GameValues>();
         }
 
         // Update is called once per frame
         void Update()
         {
-
+ 
         }
         void OnCollisionEnter(Collision col)
         {
 
-            gameScore.score++;
+            gameScore.scoreUp(1);
 
             var ob = col.gameObject;
 
@@ -40,7 +42,7 @@ namespace Wiles
 
                 //Vector3 force = (col.transform.position - transform.position).normalized;
 
-                gameScore.multiplyer++;
+                gameScore.multUp(1);
 
                 ContactPoint[] points = new ContactPoint[col.contactCount];
                 col.GetContacts(points);
