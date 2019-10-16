@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameRef: {fileID: 1450005428}
+  gameInfo: {fileID: 1610437532}
 --- !u!114 &83248831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,6 +1572,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5689577619384752269, guid: 80690f3b2503b664b865b8671afb442b,
+        type: 3}
+      propertyPath: pinBall
+      value: 
+      objectReference: {fileID: 524249429}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80690f3b2503b664b865b8671afb442b, type: 3}
 --- !u!1 &689805710
@@ -2889,7 +2895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
