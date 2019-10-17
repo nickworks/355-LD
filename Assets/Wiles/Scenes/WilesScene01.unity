@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4251a745f6b077c41ba50758217d347d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncyAmmount: 2
+  bouncyAmmount: 0.5
 --- !u!114 &229508680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,7 +863,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTimer: 10
   startingOffset: {x: 0, y: -0.1, z: 0}
-  trigger: 1
+  trigger: 3
+  compareEnum: 0
+  numberValue: 0
+  gameRef: {fileID: 1450005428}
 --- !u!1 &308099029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4251a745f6b077c41ba50758217d347d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncyAmmount: 2
+  bouncyAmmount: 0.5
 --- !u!114 &548946216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1504,7 +1507,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTimer: 10
   startingOffset: {x: 0, y: -0.1, z: 0}
-  trigger: 2
+  trigger: 4
+  compareEnum: 0
+  numberValue: 0
+  gameRef: {fileID: 1450005428}
 --- !u!1001 &675117138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1823,7 +1829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819248231}
   m_LocalRotation: {x: 0.000000008381901, y: 0.9656273, z: -0.0000000037252894, w: 0.25993064}
-  m_LocalPosition: {x: -0.11, y: -0.08, z: -0.3}
+  m_LocalPosition: {x: -0.1, y: -0.08, z: -0.3}
   m_LocalScale: {x: 0.028323999, y: 0.035, z: 0.11664002}
   m_Children: []
   m_Father: {fileID: 1758795890}
@@ -1916,7 +1922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4251a745f6b077c41ba50758217d347d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncyAmmount: 5
+  bouncyAmmount: 1
 --- !u!114 &819248238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1931,7 +1937,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTimer: 10
   startingOffset: {x: 0, y: -0.1, z: 0}
-  trigger: 0
+  trigger: 1
+  compareEnum: 0
+  numberValue: 0
+  gameRef: {fileID: 1450005428}
 --- !u!1 &1069433289
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,7 +2157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4251a745f6b077c41ba50758217d347d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncyAmmount: 2
+  bouncyAmmount: 0.5
 --- !u!114 &1109260527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,6 +2173,9 @@ MonoBehaviour:
   delayTimer: 10
   startingOffset: {x: 0, y: -0.1, z: 0}
   trigger: 0
+  compareEnum: 0
+  numberValue: 0
+  gameRef: {fileID: 1450005428}
 --- !u!1 &1170167489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,7 +2563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477332220}
   m_LocalRotation: {x: 0.0000000037252894, y: 0.2577076, z: -0.0000000018626447, w: 0.96622294}
-  m_LocalPosition: {x: 0.11, y: -0.08, z: -0.3}
+  m_LocalPosition: {x: 0.1, y: -0.08, z: -0.3}
   m_LocalScale: {x: 0.028323999, y: 0.035, z: 0.11664002}
   m_Children: []
   m_Father: {fileID: 1758795890}
@@ -2644,7 +2656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4251a745f6b077c41ba50758217d347d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bouncyAmmount: 5
+  bouncyAmmount: 1
 --- !u!114 &1477332227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2659,7 +2671,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTimer: 10
   startingOffset: {x: 0, y: -0.1, z: 0}
-  trigger: 0
+  trigger: 2
+  compareEnum: 0
+  numberValue: 0
+  gameRef: {fileID: 1450005428}
 --- !u!1 &1562338239
 GameObject:
   m_ObjectHideFlags: 0
