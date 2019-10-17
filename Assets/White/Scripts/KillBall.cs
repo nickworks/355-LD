@@ -12,7 +12,7 @@ namespace White
         
         void Update()
         {
-            if (ball.transform.position.z < killPlane)
+            if (ball != null && ball.transform.position.z < killPlane)
             {
                 ballIsDead = true;
                 Destroy(ball);

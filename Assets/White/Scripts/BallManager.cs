@@ -9,6 +9,12 @@ namespace White {
         public static int ballsLeft;
         Text text;
 
+        public static void LoseBall()
+        {
+            ballsLeft--;
+            if (ballsLeft < 0) ballsLeft = 0;
+        }
+
         void Start()
         {
             text = GetComponent<Text>();
