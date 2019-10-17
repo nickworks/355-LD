@@ -8,13 +8,17 @@ namespace White
     {
         public float killPlane;
         public GameObject ball;
+        public bool ballIsDead = true;
         
         void Update()
         {
             if (ball.transform.position.z < killPlane)
             {
+                ballIsDead = true;
                 Destroy(ball);
             }
+
+            ballIsDead = false;
         }
     }
 }
