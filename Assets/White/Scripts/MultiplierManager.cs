@@ -13,8 +13,7 @@ public class MultiplierManager : MonoBehaviour
         text = GetComponent<Text>();
         multiplier = 0;
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         text.text = "Multi: " + multiplier;

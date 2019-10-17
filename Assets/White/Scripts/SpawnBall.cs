@@ -12,6 +12,7 @@ namespace White
         public void Spawn()
         {
             Instantiate(ball, transform.position, transform.rotation);
+            KillBall.ballIsDead = false;
             stopSpawning = true;
             if (stopSpawning)
             {

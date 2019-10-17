@@ -8,7 +8,7 @@ namespace White
     {
         public float killPlane;
         public GameObject ball;
-        public static bool ballIsDead = true;
+        public static bool ballIsDead = false;
         
         void Update()
         {
@@ -17,8 +17,6 @@ namespace White
                 ballIsDead = true;
                 Destroy(ball);
             }
-
-            ballIsDead = false;
         }
     }
 }
