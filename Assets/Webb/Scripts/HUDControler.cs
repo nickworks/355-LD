@@ -32,7 +32,7 @@ namespace webb
         private void HUD()
         {
             textScore.text = $"SCORE:{(int)score}";
-            textLives.text = $"Lives:{(int)lives}";
+            textLives.text = $"Balls:{(int)lives}";
             textMultiplier.text = $"X{(int)multiplier}";
             if (Input.GetButton("Plunger"))
             {
