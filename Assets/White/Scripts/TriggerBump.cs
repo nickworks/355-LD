@@ -6,22 +6,21 @@ namespace White
 {
     public class TriggerBump : MonoBehaviour
     {
-        public int bumperForce = 800;
-        public GameObject player;
-
-        // Start is called before the first frame update
-        void Start()
+        void OnCollisionEnter(Collision collision)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-        }
+            ContactPoint[] points = new ContactPoint[collision.contactCount];
+            collision.GetContacts(points);
 
-        // Update is called once per frame
-        public void OnTriggerEnter(Collider collider)
-        {
-            if (collider.gameObject == player)
+            Vector3 force = new Vector3();
+            foreach (ContactPoint cp in points)
             {
-                player.GetComponent<Rigidbody>().AddExplosionForce(bumperForce, transform.position, 1);
+                force += cp.normal;
             }
+            force /= -points.Length;
+
+            force.Normalize();
+
+            collision.rigidbody.AddForce(force * 10, ForceMode.Impulse);
         }
     }
 }
