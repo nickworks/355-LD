@@ -9,18 +9,21 @@ namespace Wiles
         public float maxTilt = 6.5f;
         public float minTilt = -6.5f;
         Transform defaultTrans;
+        Quaternion maxQuart;
+        Quaternion minQuart;
+        Quaternion defQuart;
         // Start is called before the first frame update
         void Start()
         {
             defaultTrans = transform;
+            maxQuart = Quaternion.Euler(-6.5f, 0, maxTilt);
+            minQuart = Quaternion.Euler(-6.5f, 0, minTilt);
+            defQuart = Quaternion.Euler(-6.5f, 0, 0);
         }
 
         // Update is called once per frame
         void Update()
         {
-            Quaternion maxQuart = Quaternion.Euler(-6.5f, 0, maxTilt);
-            Quaternion minQuart = Quaternion.Euler(-6.5f, 0, minTilt);
-            Quaternion defQuart = Quaternion.Euler(-6.5f, 0, 0);
             if (Input.GetAxisRaw("Tilt") == -1) transform.localRotation = maxQuart;
             if (Input.GetAxisRaw("Tilt") == 1) transform.localRotation = minQuart;
             if (Input.GetAxisRaw("Tilt") == 0) transform.rotation = defQuart;
