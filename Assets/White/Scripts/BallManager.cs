@@ -6,14 +6,12 @@ using UnityEngine.UI;
 namespace White {
     public class BallManager : MonoBehaviour
     {
+        public GameObject ball;
+        public float killPlane;
+        public bool isDead = false;
+
         public static int ballsLeft;
         Text text;
-
-        public static void LoseBall()
-        {
-            ballsLeft--;
-            if (ballsLeft < 0) ballsLeft = 0;
-        }
 
         void Start()
         {
@@ -23,16 +21,26 @@ namespace White {
 
         void Update()
         {
-            text.text = "Balls Left: " + ballsLeft;
+            BallIsDead();
 
-            if (KillBall.ballIsDead)
+            if (isDead) LoseBall();
+
+            text.text = "Balls Left: " + ballsLeft;
+        }
+
+        public void BallIsDead()
+        {
+            if (ball != null && ball.transform.position.z < killPlane)
             {
-                ballsLeft--;
-                if(ballsLeft < 0)
-                {
-                    ballsLeft = 0;
-                }
+                isDead = true;
+                Destroy(ball);
             }
+        }
+
+        public static void LoseBall()
+        {
+            ballsLeft--;
+            if (ballsLeft < 0) ballsLeft = 0;
         }
     }
 }
