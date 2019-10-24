@@ -2,59 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpringArms : MonoBehaviour
+namespace Wiles
 {
-
-    public GameObject leftArm;
-    public GameObject rightArm;
-
-    HingeJoint targetLeft;
-    HingeJoint targetRight;
-
-    JointSpring targetSpringLeft;
-    JointSpring targetSpringRight;
-
-    // Start is called before the first frame update
-    void Start()
+    public class SpringArms : MonoBehaviour
     {
-        targetLeft = leftArm.GetComponent<HingeJoint>();
-        targetRight = rightArm.GetComponent<HingeJoint>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //HingeJoint leftSpring = 
-        //HingeJoint rightSpring = 
+        public GameObject leftArm;
+        public GameObject rightArm;
 
-        //leftSpring.spring = targetLeft.spring;
-        //rightSpring.spring = targetRight.spring;
+        HingeJoint targetLeft;
+        HingeJoint targetRight;
 
-        targetSpringLeft = targetLeft.spring;
-        targetSpringRight = targetRight.spring;
+        JointSpring targetSpringLeft;
+        JointSpring targetSpringRight;
 
-        targetSpringLeft.targetPosition = 0;
-        targetSpringRight.targetPosition = 0;
-
-        float leftFlipper = Input.GetAxis("FlipperLeft");
-        if (leftFlipper > 0) { // Left is pushed...
-            // Activete Left Arms...
-            print("LEFT!");
-            targetSpringLeft.targetPosition = -90;
+        // Start is called before the first frame update
+        void Start()
+        {
+            targetLeft = leftArm.GetComponent<HingeJoint>();
+            targetRight = rightArm.GetComponent<HingeJoint>();
         }
 
-        float rightFlipper = Input.GetAxis("FlipperRight");
-        if (rightFlipper > 0){ // Right is pushed...
-            // Activate Right Arms...
-            print("RIGHT!");
-            targetSpringRight.targetPosition = 90;
-        }
-        
-        targetLeft.spring = targetSpringLeft;
-        targetRight.spring = targetSpringRight;
+        // Update is called once per frame
+        void Update()
+        {
+            //HingeJoint leftSpring = 
+            //HingeJoint rightSpring = 
 
-        //leftArm = targetLeft;
-        //rightArm = targetRight;
-        
+            //leftSpring.spring = targetLeft.spring;
+            //rightSpring.spring = targetRight.spring;
+
+            targetSpringLeft = targetLeft.spring;
+            targetSpringRight = targetRight.spring;
+
+            targetSpringLeft.targetPosition = 0;
+            targetSpringRight.targetPosition = 0;
+
+            float leftFlipper = Input.GetAxis("FlipperLeft");
+            if (leftFlipper > 0)
+            { // Left is pushed...
+              // Activete Left Arms...
+                //print("LEFT!");
+                targetSpringLeft.targetPosition = -90;
+            }
+
+            float rightFlipper = Input.GetAxis("FlipperRight");
+            if (rightFlipper > 0)
+            { // Right is pushed...
+              // Activate Right Arms...
+                //print("RIGHT!");
+                targetSpringRight.targetPosition = 90;
+            }
+
+            targetLeft.spring = targetSpringLeft;
+            targetRight.spring = targetSpringRight;
+
+            //leftArm = targetLeft;
+            //rightArm = targetRight;
+
+        }
     }
 }

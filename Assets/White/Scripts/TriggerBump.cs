@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerBump : MonoBehaviour
+namespace White
 {
-    public int bumperForce = 800;
-    public GameObject player;
-
-    // Start is called before the first frame update
-    void Start()
+    public class TriggerBump : MonoBehaviour
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    // Update is called once per frame
-    public void OnTriggerEnter(Collider collider)
-    {
-        if(collider.gameObject == player)
+        void OnCollisionEnter(Collision collision)
         {
-            player.GetComponent<Rigidbody>().AddExplosionForce(bumperForce, transform.position, 1);
+            ContactPoint[] points = new ContactPoint[collision.contactCount];
+            collision.GetContacts(points);
+
+            Vector3 force = new Vector3();
+            foreach (ContactPoint cp in points)
+            {
+                force += cp.normal;
+            }
+            force /= -points.Length;
+
+            force.Normalize();
+
+            collision.rigidbody.AddForce(force * 10, ForceMode.Impulse);
         }
     }
 }

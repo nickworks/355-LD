@@ -1,48 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class FlipperLeft : MonoBehaviour
+namespace webb
 {
-    Rigidbody body;
-    HingeJoint joint;
-    public float capultSrentgh = 300;
-
-    public
-
-    // Start is called before the first frame update
-    void Start()
+    public class FlipperLeft : MonoBehaviour
     {
-        body = GetComponent<Rigidbody>();
-        joint = GetComponent<HingeJoint>();
-    }
+        Rigidbody body;
+        HingeJoint joint;
+        public float capultSrentgh = 300;
 
-    // Update is called once per frame
-    void Update()
-    {
 
-        if (Input.GetButtonDown("FlipperLeft"))
+
+        // Start is called before the first frame update
+        void Start()
         {
-            JointSpring spring = new JointSpring();
-            spring.targetPosition = -65;
-            spring.spring = capultSrentgh;
-            joint.spring = spring;
-            joint.useSpring = true;
-
-
-
+            body = GetComponent<Rigidbody>();
+            joint = GetComponent<HingeJoint>();
         }
-        if (Input.GetButtonUp("FlipperLeft"))
+
+        // Update is called once per frame
+        void Update()
         {
-            JointSpring spring = new JointSpring();
-            spring.targetPosition = 20;
-            spring.spring = capultSrentgh;
-            joint.spring = spring;
-            joint.useSpring = true;
+            Flipper();
+        }
+
+        private void Flipper()
+        {
+            if (Input.GetButtonDown("FlipperLeft"))
+            {
+                JointSpring spring = new JointSpring();
+                spring.targetPosition = -65;
+                spring.spring = capultSrentgh;
+                joint.spring = spring;
+                joint.useSpring = true;
 
 
 
+            }
+            if (Input.GetButtonUp("FlipperLeft"))
+            {
+                JointSpring spring = new JointSpring();
+                spring.targetPosition = 20;
+                spring.spring = capultSrentgh;
+                joint.spring = spring;
+                joint.useSpring = true;
+
+
+
+            }
         }
     }
-
 }

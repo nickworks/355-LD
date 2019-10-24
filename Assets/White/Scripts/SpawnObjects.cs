@@ -3,27 +3,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObjects : MonoBehaviour
+namespace White
 {
-    public GameObject bumper;
-    public bool stopSpawning = false;
-    public float spawnTime;
-    public float spawnDelay;
-
-    // Start is called before the first frame update
-    void Start()
+    public class SpawnObjects : MonoBehaviour
     {
-        InvokeRepeating("SpawnBumper", spawnTime, spawnDelay);
-    }
+        public GameObject objectType;
+        public bool timedSpawn = false;
+        public bool stopSpawning = false;
+        public float spawnTime;
+        public float spawnDelay;
 
-    // Update is called once per frame
-    public void SpawnBumper()
-    {
-        Instantiate(bumper, transform.position, transform.rotation);
-        stopSpawning = true;
-        if(stopSpawning)
+        // Start is called before the first frame update
+        void Start()
         {
-            CancelInvoke("SpawnBumper");
+            if (timedSpawn == true)
+            {
+                InvokeRepeating("SpawnBumper", spawnTime, spawnDelay);
+            }
+        }
+
+        // Update is called once per frame
+        public void SpawnBumper()
+        {
+            Instantiate(objectType, transform.position, transform.rotation);
+            stopSpawning = true;
+            if (stopSpawning)
+            {
+                CancelInvoke("SpawnBumper");
+            }
         }
     }
 }
