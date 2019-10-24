@@ -12,18 +12,8 @@ namespace Johnson
         public GameObject plunger;
         public Rigidbody body;
         bool isTouching = false;
-        Vector3 originalPos;
-        Vector3 newPos;
-        Vector3 movement;
 
-
-        private void Start()
-        {
-            originalPos = body.transform.position;
-            
-        }
-
-
+     
         private void FixedUpdate()
         {
             if (Input.GetButtonDown("Plunger"))
@@ -31,9 +21,7 @@ namespace Johnson
                 counter = 0;
             }
             if (Input.GetButton("Plunger"))
-            {
-                movement.z -= .01f;
-                plunger.transform.position = movement;
+            { 
 
                 if (counter > counterMax)
                 {
@@ -41,7 +29,6 @@ namespace Johnson
                 }
                 else
                 {
-                    plunger.transform.position = originalPos;
                     counter += .04f;
                 }
 
