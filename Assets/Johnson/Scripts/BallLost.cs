@@ -10,11 +10,11 @@ namespace Johnson
         bool isBallGone = false;
         Scene scene;
 
-
         private void OnTriggerEnter(Collider other)
         {
 
             isBallGone = true;
+            
         }
 
         private void Update()

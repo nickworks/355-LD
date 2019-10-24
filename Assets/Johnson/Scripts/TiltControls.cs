@@ -17,24 +17,17 @@ namespace Johnson
         void Update()
         {
             // tilt left
-            if (Input.GetKeyDown("a") || Input.GetKeyDown("left"))
+            if (Input.GetButtonDown("Tilt"))
             {
-                table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, 1.5f);
+                table.transform.rotation = Quaternion.Euler(table.transform.rotation.x, table.transform.rotation.y, -5);
             }
-            if (Input.GetKeyUp("a") || Input.GetKeyUp("left"))
+            if (Input.GetButtonUp("Tilt"))
             {
-                table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, 0);
+                table.transform.rotation = Quaternion.Euler(-9, table.transform.rotation.y, 0);
             }
+            
 
-            // tilt right
-            if (Input.GetKeyDown("d") || Input.GetKeyDown("right"))
-            {
-                table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, -1.5f);
-            }
-            if (Input.GetKeyUp("d") || Input.GetKeyUp("right"))
-            {
-                table.transform.rotation = Quaternion.Euler(-10, table.transform.rotation.y, 0);
-            }
+            
         }
     }
 }
