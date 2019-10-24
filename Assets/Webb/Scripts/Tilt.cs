@@ -20,22 +20,22 @@ namespace webb
 
         private void TiltTable()
         {
-            if (Input.GetButtonDown("Horizontal"))
+            if (Input.GetButtonDown("Tilt"))
             {
                 transform.Rotate(0, 0, 2, Space.Self);
 
             }
-            if (Input.GetButtonUp("Horizontal"))
+            if (Input.GetButtonUp("Tilt"))
             {
                 transform.Rotate(0, 0, -2, Space.Self);
 
             }
-            if (Input.GetButtonDown("Vertical"))
+            if (Input.GetButtonDown("Tilt"))
             {
                 transform.Rotate(2, 0, 0, Space.Self);
 
             }
-            if (Input.GetButtonUp("Vertical"))
+            if (Input.GetButtonUp("Tilt"))
             {
                 transform.Rotate(-2, 0, 0, Space.Self);
 

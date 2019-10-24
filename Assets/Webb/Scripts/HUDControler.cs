@@ -12,14 +12,16 @@ namespace webb
         float xpMax = 350;
         public Text textScore;
         public Text textLives;
+        public Text textWood;
         public Text textMultiplier;
         public static int score;
         public static int lives;
         public static int multiplier;
+        public static int wood;
         void Start()
         {
             score = 0;
-            lives = 3;
+            lives = 2;
             multiplier = 1;
         }
 
@@ -27,6 +29,7 @@ namespace webb
         void Update()
         {
             HUD();
+            
         }
 
         private void HUD()
@@ -34,6 +37,7 @@ namespace webb
             textScore.text = $"SCORE:{(int)score}";
             textLives.text = $"Balls:{(int)lives}";
             textMultiplier.text = $"X{(int)multiplier}";
+            textWood.text = $"Wood{(int)wood}";
             if (Input.GetButton("Plunger"))
             {
                 xp += 200 * Time.deltaTime;

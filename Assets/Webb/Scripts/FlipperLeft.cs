@@ -7,7 +7,7 @@ namespace webb
     {
         Rigidbody body;
         HingeJoint joint;
-        public float capultSrentgh = 300;
+        public float capultSrentgh = 1;
 
 
 
@@ -29,7 +29,14 @@ namespace webb
             if (Input.GetButtonDown("FlipperLeft"))
             {
                 JointSpring spring = new JointSpring();
-                spring.targetPosition = -65;
+                if (MatChanger.wood == true)
+                {
+                    spring.targetPosition = -65;
+                }
+                else
+                {
+                    spring.targetPosition = -5;
+                }
                 spring.spring = capultSrentgh;
                 joint.spring = spring;
                 joint.useSpring = true;
