@@ -23,12 +23,9 @@ namespace Wiles
         // Update is called once per frame
         void Update()
         {
-            gameInfo.text = $"Score: \n" +
-                $"{gameScore.score} \n" +
-                $"Multiplyer: \n" +
-                $"{gameScore.multiplyer} \n" +
-                $"Balls Left: \n" +
-                $"{gameScore.ballsLeft} \n";
+            gameInfo.text = $"Score: {gameScore.score} \n" +
+                $"Multiplyer: {gameScore.multiplyer} \n" +
+                $"Balls Left: {gameScore.ballsLeft} \n";
             if (gameScore.gameOver) gameInfo.text += $"GAMEOVER!";
         }
     }

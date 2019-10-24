@@ -36,6 +36,7 @@ namespace Wiles
                 {
                     body.AddForce(new Vector3(0, 0, force), ForceMode.Impulse);
                     inPlay = true;
+                    force = 0;
                 }
             }
         }
