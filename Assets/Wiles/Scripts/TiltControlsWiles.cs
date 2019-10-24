@@ -9,21 +9,38 @@ namespace Wiles
         public float maxTilt = 6.5f;
         public float minTilt = -6.5f;
         Transform defaultTrans;
+        Quaternion maxQuart;
+        Quaternion minQuart;
+        Quaternion defQuart;
+
+
+
+        public GameObject gameRef;
+        GameValues gameValue;
         // Start is called before the first frame update
         void Start()
         {
+            gameValue = gameRef.GetComponent<GameValues>();
+
             defaultTrans = transform;
+            maxQuart = Quaternion.Euler(-6.5f, 0, maxTilt);
+            minQuart = Quaternion.Euler(-6.5f, 0, minTilt);
+            defQuart = Quaternion.Euler(-6.5f, 0, 0);
         }
 
         // Update is called once per frame
         void Update()
         {
-            Quaternion maxQuart = Quaternion.Euler(-6.5f, 0, maxTilt);
-            Quaternion minQuart = Quaternion.Euler(-6.5f, 0, minTilt);
-            Quaternion defQuart = Quaternion.Euler(-6.5f, 0, 0);
-            if (Input.GetAxisRaw("Tilt") == -1) transform.localRotation = maxQuart;
-            if (Input.GetAxisRaw("Tilt") == 1) transform.localRotation = minQuart;
-            if (Input.GetAxisRaw("Tilt") == 0) transform.rotation = defQuart;
+            if (Input.GetAxisRaw("Tilt") == 0) transform.rotation = Quaternion.Slerp(transform.rotation, defQuart, 0.65f);
+
+            if (gameValue.gameOver) return;
+            //Quaternion targetQuart = new Quaternion(0, 0, 0, 0);
+            //Quaternion testQ = Quaternion.Slerp(transform.rotation, targetQuart, 0.65f);
+            
+            if (Input.GetAxisRaw("Tilt") == -1) transform.rotation = Quaternion.Slerp(transform.rotation, maxQuart, 0.65f);
+            if (Input.GetAxisRaw("Tilt") == 1) transform.rotation = Quaternion.Slerp(transform.rotation, minQuart, 0.65f);
+            
+            
             //print("Horizontal is down!");
             /*
             float tilt = -(Input.GetAxisRaw("Horizontal"));
