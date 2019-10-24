@@ -7,16 +7,18 @@ namespace White {
     public class BallManager : MonoBehaviour
     {
         public GameObject ball;
-        public float killPlane;
-        public bool isDead = false;
 
-        public static int ballsLeft;
+        bool stopSpawning = false;
+
+        public float killPlane;
+        bool isDead = false;
+
+        public int ballsLeft = 2;
         Text text;
 
         void Start()
         {
             text = GetComponent<Text>();
-            ballsLeft = 2;
         }
 
         void Update()
@@ -28,6 +30,23 @@ namespace White {
             text.text = "Balls Left: " + ballsLeft;
         }
 
+        public void Spawn()
+        {
+            Instantiate(ball, transform.position, transform.rotation);
+            isDead = false;
+            stopSpawning = true;
+            if (stopSpawning)
+            {
+                isDead = false;
+                CancelInvoke("Spawn");
+            }
+
+            if (isDead == true)
+            {
+                Invoke("Spawn", 5);
+            }
+        }
+
         public void BallIsDead()
         {
             if (ball != null && ball.transform.position.z < killPlane)
@@ -37,7 +56,7 @@ namespace White {
             }
         }
 
-        public static void LoseBall()
+        public void LoseBall()
         {
             ballsLeft--;
             if (ballsLeft < 0) ballsLeft = 0;
