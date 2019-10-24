@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace webb
 {
-    public class Bounce : MonoBehaviour
+    public class WoodBouncer : MonoBehaviour
     {
-        public float forcemultiplier = .000002f;
+        public float forcemultiplier = 20;
         void OnCollisionEnter(Collision collision)
         {
+            HUDControler.wood += 1;
             HUDControler.score += 50 * HUDControler.multiplier;
             ContactPoint[] points = new ContactPoint[collision.contactCount];
             collision.GetContacts(points);
