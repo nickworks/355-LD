@@ -18,7 +18,6 @@ namespace White
         
         void Update()
         {
-
             text.text = "Score: " + score;
         }
     }
