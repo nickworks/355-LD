@@ -11,7 +11,7 @@ public class MultiplierManager : MonoBehaviour
     void Start()
     {
         text = GetComponent<Text>();
-        multiplier = 0;
+        multiplier = 1;
     }
     
     void Update()
